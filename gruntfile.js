@@ -82,7 +82,18 @@ module.exports = function (grunt) {
                     src: ['*.jpg'],
                     dest: 'img/dist'
                 }]
-            }
+            },
+            png: {
+                options: {
+                    optimizationLevel: 7
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'img/src',
+                    src: ['*.png'],
+                    dest: 'img/dist'
+                }]
+            },
         }
     });
 

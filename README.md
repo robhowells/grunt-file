@@ -5,3 +5,4 @@ Example grunt file to automate the following tasks:
 - JS minification 
 - Autoprefixing 
 - Live reload
+- Image minification

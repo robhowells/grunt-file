@@ -70,6 +70,19 @@ module.exports = function (grunt) {
                     server: '.'
                 }
             }
+        },
+        imagemin: {
+            jpg: {
+                options: {
+                    progressive: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'img/src',
+                    src: ['*.jpg'],
+                    dest: 'img/dist'
+                }]
+            }
         }
     });
 
@@ -78,8 +91,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('build', ['sass:dist', 'autoprefixer', 'uglify:dev']);
+    grunt.registerTask('build', ['sass:dist', 'autoprefixer', 'uglify:dev', 'imagemin']);
 
 };
